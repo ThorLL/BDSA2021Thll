@@ -7,12 +7,31 @@ namespace leapYear
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter a year to test whether or not it's a leap year, hit enter afterwards.");
-            int year = int.Parse(Console.ReadLine());
-            if(IsLeapYear(year)){
-                Console.WriteLine("Yay");
-            }else{
-                Console.WriteLine("Nay");
+            while (true)
+            {
+                var input = Console.ReadLine();
+                try
+                {
+                    int year = int.Parse(input);     
+                    if(IsLeapYear(year))
+                    {
+                        Console.WriteLine("Yay");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nay");
+                        return;
+                    }
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("'"+ input + "' is not an integer, e.g. 420");
+                }
+                
+                
             }
+            
         }
         public static bool IsLeapYear(int year){
         if(year % 4 == 0){
