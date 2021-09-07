@@ -4,7 +4,7 @@ namespace leapYear
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Please enter a year to test whether or not it's a leap year, hit enter afterwards.");
             while (true)
@@ -28,8 +28,6 @@ namespace leapYear
                 {
                     Console.WriteLine("'"+ input + "' is not an integer, e.g. 420");
                 }
-                
-                
             }
             
         }
